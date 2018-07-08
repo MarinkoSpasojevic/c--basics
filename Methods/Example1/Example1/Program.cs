@@ -14,7 +14,7 @@ namespace Example1
             Console.WriteLine($"Sum result: {result}");
         }
 
-        public static void Substract(int first, int second)
+        public static void Subtract(int first, int second)
         {
             int result = first - second;
             Console.WriteLine($"Substraction result: {result}");
@@ -36,7 +36,7 @@ namespace Example1
             int secondArgument = Convert.ToInt32(Console.ReadLine());
 
             Sum(firstArgument, secondArgument);
-            Substract(firstArgument, secondArgument);
+            Subtract(firstArgument, secondArgument);
             Multiplication(firstArgument, secondArgument);
 
             Console.ReadKey();
