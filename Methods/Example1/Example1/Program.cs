@@ -26,6 +26,11 @@ namespace Example1
             Console.WriteLine($"Multiplication result: {result}");
         }
 
+        public static void MethodWithOptParams(int first, int second = 10)
+        {
+            Console.WriteLine(first + second);
+        }
+
 
         static void Main(string[] args)
         {
@@ -38,6 +43,9 @@ namespace Example1
             Sum(firstArgument, secondArgument);
             Subtract(firstArgument, secondArgument);
             Multiplication(firstArgument, secondArgument);
+
+            MethodWithOptParams(20);
+            MethodWithOptParams(20, 35);
 
             Console.ReadKey();
         }
