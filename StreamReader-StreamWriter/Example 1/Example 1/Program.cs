@@ -23,23 +23,25 @@ namespace Example_1
 
         public static void PrintNumbersAndMax(string path)
         {
-            StreamReader sr = new StreamReader(path);
-            string line = sr.ReadLine();
-            Console.WriteLine(line);
-            int max = Convert.ToInt32(line);
-
-            while ((line = sr.ReadLine()) != null)
+            using (StreamReader sr = new StreamReader(path))
             {
+                string line = sr.ReadLine();
                 Console.WriteLine(line);
+                int max = Convert.ToInt32(line);
 
-                int temp = Convert.ToInt32(line);
-                if(temp > max)
+                while ((line = sr.ReadLine()) != null)
                 {
-                    max = temp;
-                }
-            }
+                    Console.WriteLine(line);
 
-            Console.WriteLine($"Max number is: {max}");
+                    int temp = Convert.ToInt32(line);
+                    if (temp > max)
+                    {
+                        max = temp;
+                    }
+                }
+
+                Console.WriteLine($"Max number is: {max}");
+            }
         }
 
         static void Main(string[] args)
